@@ -1,0 +1,65 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#include "custom.h"
+#include "behaviours.dtsi"
+
+// Layer aliases
+#define BASE 0
+#define NAV 1
+#define SYM 2
+#define NUM 3
+#define MEDIA 4
+
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "BASE";
+// --------------------------------------------------------------------------------
+// |      |  Q  |  D  |  R  |  W  |  B  |   |  J  |  F   |  U  |  P  |  ;  |      |
+// |      |  A  |  S  |  H  |  T  |  G  |   |  Y  |  N   |  E  |  O  |  I  |      |
+// |      |  Z  |  X  |  M  |  C  |  V  |   |  K  |  L   |  ,  |  .  |  /  |      |
+//                    | DEL | BSPC| RET |   | TAB | SPC  | ESC |
+            bindings = <
+U_NP &kp Q             &kp D             &kp R             &kp W             &kp B            &kp J              &kp F              &kp U              &kp P           &kp SEMI              U_NP
+U_NP U_MT(LGUI, A)     U_MT(LALT, S)     U_MT(LCTRL, H)    U_MT(LSHFT, T)    &kp G            &kp Y              U_MT(LSHFT, N)     U_MT(LCTRL, E)     U_MT(LALT, O)   U_MT(LGUI, I)         U_NP
+U_NP U_LT(U_BUTTON, Z) U_MT(RALT, X)     &kp M             &kp C             &kp V            &kp K              &kp L              &kp COMMA          U_MT(RALT, DOT) U_LT(U_BUTTON, SLASH) U_NP
+U_NP U_NP              U_NP              U_LT(U_FUN, DEL)  U_LT(NUM, BSPC) U_LT(SYM, RET)   U_LT(U_MOUSE, TAB) U_LT(NAV, SPACE)   U_LT(U_MEDIA, ESC) U_NP            U_NP                  U_NP
+            >;
+        };
+
+        lower_layer {
+            display-name = "NUMBER";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+            bindings = <
+&kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+&kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+            >;
+        };
+
+        raise_layer {
+            display-name = "SYMBOL";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+            bindings = <
+&kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+&kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+&kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
+                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+            >;
+        };
+    };
+};
