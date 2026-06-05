@@ -1,4 +1,4 @@
-#include <custom/3x6.dtsi>
+#include "custom/3x6.dtsi"
 
 / {
     chosen {
