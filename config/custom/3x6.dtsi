@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "custom.h"
-#include "behaviours.dtsi"
+#include "behaviors.dtsi"
 
 // Layer aliases
 #define BASE 0
