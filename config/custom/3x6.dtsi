@@ -27,7 +27,7 @@
             bindings = <
 U_NP &kp Q             &kp D             &kp R             &kp W             &kp B            &kp J              &kp F              &kp U              &kp P           &kp SEMI              U_NP
 U_NP U_MT(LGUI, A)     U_MT(LALT, S)     U_MT(LCTRL, H)    U_MT(LSHFT, T)    &kp G            &kp Y              U_MT(LSHFT, N)     U_MT(LCTRL, E)     U_MT(LALT, O)   U_MT(LGUI, I)         U_NP
-U_NP U_LT(U_BUTTON, Z) U_MT(RALT, X)     &kp M             &kp C             &kp V            &kp K              &kp L              &kp COMMA          U_MT(RALT, DOT) U_LT(U_BUTTON, SLASH) U_NP
+U_NP Z                 U_MT(RALT, X)     &kp M             &kp C             &kp V            &kp K              &kp L              &kp COMMA          U_MT(RALT, DOT) SLASHi                U_NP
 // U_NP U_NP              U_NP              U_LT(U_FUN, DEL)  U_LT(NUM, BSPC)   U_LT(SYM, RET)   U_LT(U_MOUSE, TAB) U_LT(NAV, SPACE)   U_LT(U_MEDIA, ESC) U_NP            U_NP                  U_NP
 U_NP U_NP              U_NP              U_LT(NAV, DEL)  U_LT(NUM, BSPC)   U_LT(SYM, RET)   U_LT(NAV, TAB) U_LT(NAV, SPACE)   U_LT(NAV, ESC) U_NP            U_NP                  U_NP
             >;
