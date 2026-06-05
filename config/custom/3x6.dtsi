@@ -28,37 +28,38 @@
 U_NP &kp Q             &kp D             &kp R             &kp W             &kp B            &kp J              &kp F              &kp U              &kp P           &kp SEMI              U_NP
 U_NP U_MT(LGUI, A)     U_MT(LALT, S)     U_MT(LCTRL, H)    U_MT(LSHFT, T)    &kp G            &kp Y              U_MT(LSHFT, N)     U_MT(LCTRL, E)     U_MT(LALT, O)   U_MT(LGUI, I)         U_NP
 U_NP U_LT(U_BUTTON, Z) U_MT(RALT, X)     &kp M             &kp C             &kp V            &kp K              &kp L              &kp COMMA          U_MT(RALT, DOT) U_LT(U_BUTTON, SLASH) U_NP
-U_NP U_NP              U_NP              U_LT(U_FUN, DEL)  U_LT(NUM, BSPC) U_LT(SYM, RET)   U_LT(U_MOUSE, TAB) U_LT(NAV, SPACE)   U_LT(U_MEDIA, ESC) U_NP            U_NP                  U_NP
+// U_NP U_NP              U_NP              U_LT(U_FUN, DEL)  U_LT(NUM, BSPC)   U_LT(SYM, RET)   U_LT(U_MOUSE, TAB) U_LT(NAV, SPACE)   U_LT(U_MEDIA, ESC) U_NP            U_NP                  U_NP
+U_NP U_NP              U_NP              U_LT(NAV, DEL)  U_LT(NUM, BSPC)   U_LT(SYM, RET)   U_LT(NAV, TAB) U_LT(NAV, SPACE)   U_LT(NAV, ESC) U_NP            U_NP                  U_NP
             >;
         };
 
-        lower_layer {
-            display-name = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+        navigation_layer {
+            display-name = "NAV";
             bindings = <
-&kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-&kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+U_NP  &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_AGAIN    U_NA  U_NA       U_NA       U_NA      U_NA      U_NP          
+U_NP  &kp LEFT    &kp DOWN   &kp UP      &kp RIGHT    &kp CAPS       U_NA  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  U_NP
+U_NP  &kp HOME    &kp PG_DN  &kp PG_UP   &kp END      &kp INS        U_NA  U_NA       &kp RCTRL  &kp RALT  U_NA      U_NP
+U_NP  U_NP        U_NP       &kp DEL     &kp BSPC     &kp RET        U_NA  U_NA       U_NA       U_NP      U_NP      U_NP
             >;
         };
 
-        raise_layer {
+        symbol_layer {
             display-name = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-&kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-&kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-&kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                          &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+U_NP  U_NA      U_NA      U_NA       U_NA       U_NA    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC   U_NP
+U_NP  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  U_NA    &kp PLUS   &kp DLLR  &kp PRCNT  &kp CARET &kp DQT    U_NP
+U_NP  U_NA      &kp RALT  &kp RCTRL  U_NA       U_NA    &kp PIPE   &kp EXCL  &kp AT     &kp HASH  &kp TILDE  U_NP
+U_NP  U_NP      U_NP      U_NA       U_NA       U_NA    &kp UNDER  &kp LPAR  &kp RPAR   U_NP      U_NP       U_NP
+            >;
+        };
+
+        number_layer {
+            display-name = "NUMBER";
+            bindings = <
+U_NP  U_NA      U_NA      U_NA       U_NA       U_NA    &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT   U_NP
+U_NP  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  U_NA    &kp EQUAL  &kp N4  &kp N5   &kp N6  &kp SQT    U_NP
+U_NP  U_NA      &kp RALT  &kp RCTRL  U_NA       U_NA    &kp BSLH   &kp N1  &kp N2   &kp N3  &kp GRAVE  U_NP
+U_NP  U_NP      U_NP      U_NA       U_NA       U_NA    &kp MINUS  &kp N0  &kp DOT  U_NP    U_NP       U_NP
             >;
         };
     };
