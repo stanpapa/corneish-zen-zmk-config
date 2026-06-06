@@ -5,7 +5,7 @@
 
 #include "custom.h"
 
-// #include "shift_functions.dtsi"
+#include "shift_functions.dtsi"
 
 // Layer aliases
 #define BASE 0
