@@ -18,7 +18,7 @@
 #define FUN 5
 
 &mt {
-    flavor = "hold-preferred";
+    flavor = "tap-preferred";
     tapping-term-ms = <U_TAPPING_TERM>;
 };
 
